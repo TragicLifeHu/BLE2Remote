@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Heater</title>
+<meta name="description" content="Control and schedule the BLE heater">
+<meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Heater">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<!-- iOS launch images: regenerate with tools/make_splash.py -->
+<link rel="apple-touch-startup-image" href="splash/640x1136-light.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/640x1136-dark.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/750x1334-light.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/750x1334-dark.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1242x2208-light.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1242x2208-dark.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1125x2436-light.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1125x2436-dark.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/828x1792-light.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/828x1792-dark.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1242x2688-light.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1242x2688-dark.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1170x2532-light.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1170x2532-dark.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1284x2778-light.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1284x2778-dark.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1179x2556-light.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1179x2556-dark.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1290x2796-light.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1290x2796-dark.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1206x2622-light.png" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1206x2622-dark.png" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1260x2736-light.png" media="(device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1260x2736-dark.png" media="(device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<link rel="apple-touch-startup-image" href="splash/1320x2868-light.png" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: light)">
+<link rel="apple-touch-startup-image" href="splash/1320x2868-dark.png" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)">
+<style>html{background:#f5f2ed}@media (prefers-color-scheme:dark){html{background:#151412}}</style>
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="loading sched-loading">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v8M6.3 6.8a8 8 0 1 0 11.4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14Zm0 0 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Zm-6 8a6 6 0 0 0 12 0M12 17v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><path d="M12 8v5l3 2M9 2h6M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1v-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Zm0 3h16M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-log" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7.4-3a7.4 7.4 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7.5 7.5 0 0 0-2-1.2L14.5 3h-5l-.4 2.6a7.5 7.5 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6a7.4 7.4 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-1a7.5 7.5 0 0 0 2 1.2l.4 2.6h5l.4-2.6a7.5 7.5 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path d="M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bt" viewBox="0 0 24 24"><path d="m7 7 10 10-5 4V3l5 4L7 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<main id="app">
+  <!-- HOME -->
+  <section class="view" id="v-home" data-view="home">
+    <header class="top">
+      <div>
+        <h1>Heater</h1>
+        <p class="status" id="h-status"><span class="dot"></span><span class="skel">Connecting…</span></p>
+      </div>
+      <time class="clock skel" id="h-clock">00:00</time>
+    </header>
+
+    <div class="banner warn" id="b-lock" hidden>
+      <svg><use href="#i-lock"/></svg>
+      <div><b>The heater ignored the last command.</b><br>Child lock is probably on — unlock it with the remote, then try again.</div>
+      <button class="icon-btn" data-dismiss="b-lock" aria-label="Dismiss"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <div class="banner" id="b-link" hidden>
+      <svg><use href="#i-bt"/></svg>
+      <div id="b-link-text"></div>
+      <button class="btn small" id="b-link-btn" hidden></button>
+    </div>
+
+    <div class="dial-wrap" id="dial-wrap">
+      <button class="round-btn" id="t-down" aria-label="Lower temperature" disabled><svg><use href="#i-minus"/></svg></button>
+      <div class="dial" id="dial">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="track" cx="100" cy="100" r="84"/>
+          <circle class="arc" id="dial-arc" cx="100" cy="100" r="84"/>
+        </svg>
+        <div class="dial-center">
+          <div class="setpoint"><span id="sp" class="skel">--</span><sup>°C</sup></div>
+          <div class="mode-label skel" id="mode-label">Loading</div>
+        </div>
+      </div>
+      <button class="round-btn" id="t-up" aria-label="Raise temperature" disabled><svg><use href="#i-plus"/></svg></button>
+    </div>
+    <p class="hint" id="dial-hint">&nbsp;</p>
+
+    <button class="power" id="power" disabled><svg><use href="#i-power"/></svg><span class="skel">Turn on</span></button>
+
+    <div class="tiles">
+      <button class="tile" id="tile-eco" disabled><svg><use href="#i-leaf"/></svg><span class="t-name">Power-save</span><span class="t-val skel">Off</span></button>
+      <button class="tile" id="tile-timer" disabled><svg><use href="#i-timer"/></svg><span class="t-name">Off-timer</span><span class="t-val skel">Off</span></button>
+      <button class="tile" id="tile-voice" disabled><svg><use href="#i-mic"/></svg><span class="t-name">Voice</span><span class="t-val skel">Off</span></button>
+    </div>
+
+    <button class="card next" id="next-card" data-go="schedule">
+      <svg class="lead"><use href="#i-cal"/></svg>
+      <div><div class="eyebrow skel" id="next-eyebrow">Next</div><div id="next-text" class="skel">Loading schedule</div>
+        <div class="preview" id="next-preview" hidden></div></div>
+      <svg class="chev"><use href="#i-chev"/></svg>
+    </button>
+
+    <button class="card devcard" id="dev-card" data-go="settings">
+      <div class="bars" id="dev-bars"><i style="height:4px"></i><i style="height:8px"></i><i style="height:12px"></i><i style="height:16px"></i></div>
+      <div class="grow"><b id="dev-name" class="skel">Heater</b><div class="sub skel" id="dev-sub">MAC · signal</div></div>
+      <svg class="chev"><use href="#i-chev"/></svg>
+    </button>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="view" id="v-schedule" data-view="schedule" hidden>
+    <header class="top"><div><h1>Schedule</h1><p class="sub skel-s" id="s-sub">Bridge time —</p></div>
+      <button class="btn primary" id="s-add"><svg><use href="#i-plus"/></svg>Add</button></header>
+
+    <div class="card pause" id="pause-card">
+      <svg class="lead"><use href="#i-pause"/></svg>
+      <div class="grow"><b>Pause schedules</b><div class="sub" id="pause-sub">Holiday mode — nothing runs until you resume.</div></div>
+      <label class="switch"><input type="checkbox" id="pause-toggle"><span></span></label>
+    </div>
+    <div class="pause-until" id="pause-until" hidden>
+      <label>Resume on <input type="date" id="pause-date"></label>
+    </div>
+
+    <div class="list" id="conflicts"></div>
+    <h2>Weekly</h2>
+    <div class="list" id="rules"><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div></div>
+    <h2>One-time</h2>
+    <div class="list" id="events"><div class="skel-card"></div></div>
+    <h2>Coming up <span class="sub">· tap to skip once</span></h2>
+    <div class="list compact" id="upcoming"><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div></div>
+    <p class="note">Schedules fire once at their time. If you change the heater in the meantime — here or with the remote — your change holds until the next event.</p>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="view" id="v-settings" data-view="settings" hidden>
+    <header class="top"><div><h1>Settings</h1><p class="sub" id="set-ver"></p></div></header>
+
+    <h2>Heater</h2>
+    <div class="card col">
+      <div class="row"><div><b id="pair-title" class="skel">Not paired</b><div class="sub skel" id="pair-sub">Pair the bridge with your heater.</div></div></div>
+      <div class="row gap"><button class="btn" id="pair-btn">Pair a heater</button><button class="btn ghost danger" id="forget-btn" hidden>Forget</button></div>
+    </div>
+
+    <h2>Safety</h2>
+    <div class="card col">
+      <div class="row"><div class="grow"><b>Maximum on-time</b><div class="sub">The bridge turns the heater off after it has run this long without a break — however it was turned on. For protection even when the bridge is down, give a schedule a “Run for” duration.</div></div>
+        <select id="max-on" class="skel-s"></select></div>
+    </div>
+
+    <h2>Schedule behaviour</h2>
+    <div class="card col">
+      <div class="row"><div class="grow"><b>Catch up missed events</b><div class="sub">If the heater was unreachable at event time (power cut, out of range), apply the event when it comes back within…</div></div>
+        <select id="catchup" class="skel-s"><option value="0">Never</option><option value="15">15 min</option><option value="30">30 min</option><option value="60">1 hour</option><option value="120">2 hours</option></select></div>
+    </div>
+
+    <h2>Use other controls</h2>
+    <div class="card col">
+      <div class="row"><div class="grow"><b>Free Bluetooth temporarily</b><div class="sub">The heater accepts only one connection. Let go for a while so the other controls can connect.</div></div></div>
+      <div class="row gap"><button class="btn" data-release="10">10 min</button><button class="btn" data-release="30">30 min</button><button class="btn ghost" data-release="0">Reconnect now</button></div>
+    </div>
+  </section>
+
+  <!-- LOG -->
+  <section class="view" id="v-log" data-view="log" hidden>
+    <header class="top"><div><h1>Log</h1><p class="sub" id="log-sub">Last 7 days</p></div></header>
+    <div class="seg" id="log-seg"><button data-log="runs" class="on">Schedule runs</button><button data-log="activity">Activity</button></div>
+    <div class="list compact log-list" id="runs"><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div></div>
+    <div class="list compact log-list" id="activity" hidden><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div></div>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Sections">
+  <button data-go="home" class="on"><svg><use href="#i-home"/></svg>Home</button>
+  <button data-go="schedule"><svg><use href="#i-cal"/></svg>Schedule</button>
+  <button data-go="log"><svg><use href="#i-log"/></svg>Log</button>
+  <button data-go="settings"><svg><use href="#i-gear"/></svg>Settings</button>
+</nav>
+
+<!-- sheets -->
+<div class="scrim" id="scrim" hidden></div>
+
+<div class="sheet" id="sh-timer" hidden>
+  <div class="grab"></div><h3>Off-timer</h3>
+  <p class="sub">The heater switches itself off after this many hours.</p>
+  <div class="chips" id="timer-chips"></div>
+</div>
+
+<div class="sheet" id="sh-timer-ok" hidden>
+  <div class="grab"></div><h3>Timer overlaps your schedule</h3>
+  <p class="sub" id="to-sub"></p>
+  <div class="list compact" id="to-list"></div>
+  <div class="choices">
+    <button class="choice" id="to-timer"><b>Timer first</b><span>Skip these events. Cancelling the timer later won’t bring them back.</span></button>
+    <button class="choice" id="to-sched"><b>Schedule first</b><span>Events run as planned. The first one that changes the heater cancels the timer.</span></button>
+  </div>
+  <div class="row end"><button class="btn ghost" id="to-cancel">Cancel</button></div>
+</div>
+
+<div class="sheet" id="sh-ontimer" hidden>
+  <div class="grab"></div><h3>Set on-timer</h3>
+  <p class="sub" id="ot-sub"></p>
+  <div id="ot-cancels" hidden>
+    <p class="sub">Turning the heater on cancels a pending on-timer, and <span id="ot-cancels-lead"></span> before it starts:</p>
+    <div class="list compact" id="ot-list"></div>
+    <div class="choices pick" id="ot-choice">
+      <button class="choice" data-mode="timer"><b>Timer first</b><span>Skip these events, so the on-timer runs.</span></button>
+      <button class="choice" data-mode="schedule"><b>Schedule first</b><span>Events run as planned. The first one turns the heater on early, which cancels the on-timer.</span></button>
+    </div>
+  </div>
+  <p class="sub" id="ot-off"></p>
+  <div class="chips" id="ot-chips" hidden></div>
+  <p class="error" id="ot-err"></p>
+  <div class="row end"><button class="btn ghost" id="ot-cancel">Cancel</button><button class="btn primary" id="ot-go">Set on-timer</button></div>
+</div>
+
+<div class="sheet" id="sh-edit" hidden>
+  <div class="grab"></div>
+  <h3 id="ed-title">New schedule</h3>
+  <div class="seg" id="ed-kind"><button data-kind="rule" class="on">Weekly</button><button data-kind="event">One-time</button></div>
+  <label class="field">Name <input id="ed-name" maxlength="40" placeholder="e.g. Wake up"></label>
+  <div id="ed-weekly">
+    <label class="field">Time <input type="time" id="ed-time" value="07:00"></label>
+    <div class="days" id="ed-days"></div>
+    <div class="presets"><button data-days="0,1,2,3,4">Weekdays</button><button data-days="5,6">Weekend</button><button data-days="0,1,2,3,4,5,6">Every day</button></div>
+  </div>
+  <label class="field" id="ed-once" hidden>Date &amp; time <input type="datetime-local" id="ed-at"></label>
+  <div class="field">Action
+    <div class="seg" id="ed-action"><button data-act="heat" class="on">Heat</button><button data-act="eco">Power-save</button><button data-act="off">Turn off</button></div>
+  </div>
+  <div class="stepper" id="ed-temp"><button id="ed-tdown"><svg><use href="#i-minus"/></svg></button><span id="ed-tval">22°C</span><button id="ed-tup"><svg><use href="#i-plus"/></svg></button></div>
+  <label class="field" id="ed-dur">Run for <select id="ed-hours"></select>
+    <span class="sub" id="ed-dur-hint"></span></label>
+  <p class="error" id="ed-err"></p>
+  <div class="row gap end"><button class="btn ghost danger" id="ed-del" hidden>Delete</button><span class="grow"></span><button class="btn ghost" id="ed-cancel">Cancel</button><button class="btn primary" id="ed-save">Save</button></div>
+</div>
+
+<div class="sheet" id="sh-pair" hidden>
+  <div class="grab"></div><h3>Pair a heater</h3>
+  <p class="sub" id="pair-hint">Looking for heaters nearby… Keep the BLE link device close to the heater. If the heater is connected to another phone, close the other controls there.</p>
+  <div class="list" id="pair-list"></div>
+  <div class="row gap end"><button class="btn ghost" id="pair-rescan">Scan again</button><button class="btn" id="pair-close">Close</button></div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

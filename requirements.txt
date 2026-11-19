@@ -1,0 +1,5 @@
+# PC-side tools and tests. The control plane itself needs only the Python 3 standard library.
+bleak>=3.1.0
+frida-tools>=14.13.0
+paramiko>=5.1.0
+pytest>=9.2.0

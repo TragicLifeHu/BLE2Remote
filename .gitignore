@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+# runtime state of a local control plane (server.py --data default) and of the phone install
+/data/
+/logs/
+/lib/
+backends/ios/data/
+backends/ios/logs/
+backends/ios/lib/
+.claude/

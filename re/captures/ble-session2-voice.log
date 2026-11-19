@@ -1,0 +1,25 @@
+12:36:46.786 READY CoreBluetooth hooks installed. Use mark("label") before each tap.
+12:37:11.614 SCAN services=( "0000FFB0-0000-1000-8000-00805F9B34FB" ) options={ kCBScanOptionAllowDuplicates = 1; }
+12:37:11.798 CONNECT periph=00000000-0000-4000-8000-0000000000A1 name=UAF028
+12:37:12.129 SUBSCRIBE svc=FFB0 char=FFB2 on=1
+12:37:12.132 SUBSCRIBE svc=FFB0 char=FFB5 on=1
+12:37:12.213 WRITE svc=FFB0 char=FFB1 type=noresp data=aa031700001a55
+12:37:12.514 WRITE svc=FFB0 char=FFB1 type=noresp data=aa0318fe001955
+12:37:13.269 DISCONNECT_REQ periph=00000000-0000-4000-8000-0000000000A1 name=UAF028
+12:37:15.769 SCAN services=( "0000FFB0-0000-1000-8000-00805F9B34FB" ) options={ kCBScanOptionAllowDuplicates = 1; }
+12:37:15.771 SCAN services=( "0000FFB0-0000-1000-8000-00805F9B34FB" ) options={ kCBScanOptionAllowDuplicates = 1; }
+12:37:15.857 CONNECT periph=00000000-0000-4000-8000-0000000000A1 name=UAF028
+12:37:16.239 SUBSCRIBE svc=FFB0 char=FFB2 on=1
+12:37:16.242 SUBSCRIBE svc=FFB0 char=FFB5 on=1
+12:37:16.392 WRITE svc=FFB0 char=FFB1 type=noresp data=aa030200000555
+12:37:16.685 WRITE svc=FFB0 char=FFB1 type=noresp data=aa0303fe000455
+12:37:17.688 WRITE svc=FFB0 char=FFB1 type=noresp data=aa0304f800ff55
+12:37:22.817 WRITE svc=FFB0 char=FFB1 type=noresp data=aa030501010a55
+12:37:30.982 WRITE svc=FFB0 char=FFB1 type=noresp data=aa03060f011955
+12:37:34.385 WRITE svc=FFB0 char=FFB1 type=noresp data=aa03070f001955
+12:37:37.966 WRITE svc=FFB0 char=FFB1 type=noresp data=aa03080f011b55
+12:37:41.735 WRITE svc=FFB0 char=FFB1 type=noresp data=aa03090f001b55
+12:38:01.747 WRITE svc=FFB0 char=FFB1 type=noresp data=aa030aff000c55
+12:38:22.072 WRITE svc=FFB0 char=FFB1 type=noresp data=aa030bff000d55
+12:38:42.086 WRITE svc=FFB0 char=FFB1 type=noresp data=aa030cff000e55
+12:39:02.099 WRITE svc=FFB0 char=FFB1 type=noresp data=aa030dff000f55

@@ -1,0 +1,46 @@
+21:32:52 < HELLO blepipe 1
+21:32:52 < STATE connected
+21:32:52 < NOTIFY FFB2 aa0800530100000000005c55   -> Status(power=True, timer_hours=0, mode=0, level=0, setpoint=0, voice=False)
+21:32:53 > WRITE aa030001000455
+21:32:53 < OK
+21:32:53 < NOTIFY FFB2 aa0800530000000000005b55   -> Status(power=False, timer_hours=0, mode=0, level=0, setpoint=0, voice=False)
+21:32:55 > WRITE aa030006192255
+21:32:55 < OK
+21:32:57 > WRITE aa030000000355
+21:32:57 < OK
+21:32:57 < NOTIFY FFB2 aa0800530000000000005b55   -> Status(power=False, timer_hours=0, mode=0, level=0, setpoint=0, voice=False)
+21:32:58 > WRITE aa030009010d55
+21:32:58 < OK
+21:33:00 > WRITE aa030000000355
+21:33:00 < OK
+21:33:01 < NOTIFY FFB2 aa0800530000000000005b55   -> Status(power=False, timer_hours=0, mode=0, level=0, setpoint=0, voice=False)
+21:33:02 > WRITE aa030005020a55
+21:33:02 < OK
+21:33:03 < NOTIFY FFB2 aa0800530002000000005d55   -> Status(power=False, timer_hours=2, mode=0, level=0, setpoint=0, voice=False)
+21:33:04 > WRITE aa030000000355
+21:33:04 < OK
+21:33:04 < NOTIFY FFB2 aa0800530002000000005d55   -> Status(power=False, timer_hours=2, mode=0, level=0, setpoint=0, voice=False)
+21:33:06 > WRITE aa03000f011355
+21:33:06 < OK
+21:33:06 < NOTIFY FFB2 aa0800530002000000015e55   -> Status(power=False, timer_hours=2, mode=0, level=0, setpoint=0, voice=True)
+21:33:08 > WRITE aa030000000355
+21:33:08 < OK
+21:33:08 < NOTIFY FFB2 aa0800530002000000015e55   -> Status(power=False, timer_hours=2, mode=0, level=0, setpoint=0, voice=True)
+21:33:17 < HELLO blepipe 1
+21:33:17 < STATE connected
+21:33:17 < NOTIFY FFB2 aa0800530002000000015e55   -> Status(power=False, timer_hours=2, mode=0, level=0, setpoint=0, voice=True)
+21:33:18 > WRITE aa030005000855
+21:33:18 < OK
+21:33:19 < NOTIFY FFB2 aa0800530000000000015c55   -> Status(power=False, timer_hours=0, mode=0, level=0, setpoint=0, voice=True)
+21:33:20 > WRITE aa03000f001255
+21:33:20 < OK
+21:33:20 < NOTIFY FFB2 aa0800530000000000005b55   -> Status(power=False, timer_hours=0, mode=0, level=0, setpoint=0, voice=False)
+21:33:22 > WRITE aa030001010555
+21:33:22 < OK
+21:33:23 < NOTIFY FFB2 aa0800530100000000005c55   -> Status(power=True, timer_hours=0, mode=0, level=0, setpoint=0, voice=False)
+21:33:24 > WRITE aa030006172055
+21:33:24 < OK
+21:33:25 < NOTIFY FFB2 aa0800530100000017007355   -> Status(power=True, timer_hours=0, mode=0, level=0, setpoint=23, voice=False)
+21:33:26 > WRITE aa030000000355
+21:33:26 < OK
+21:33:26 < NOTIFY FFB2 aa0800530100000017007355   -> Status(power=True, timer_hours=0, mode=0, level=0, setpoint=23, voice=False)
